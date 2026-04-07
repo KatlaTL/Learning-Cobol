@@ -1,0 +1,24 @@
+       PROGRAM-ID. opgave2.
+
+       DATA DIVISION.
+           WORKING-STORAGE SECTION.
+           01 KUNDE-ID PIC X(10) VALUE SPACES.
+           01 FIRST-NAME PIC X(20) VALUE SPACES.
+           01 LAST-NAME PIC X(20) VALUE SPACES.
+           01 KONTO-NUMMER PIC X(20) VALUE SPACES.
+           01 BALANCE PIC 9(7)V99 VALUE ZEROS.
+           01 VALUTA-CODE PIC X(3) VALUE SPACES.
+       
+       PROCEDURE DIVISION.
+           MOVE "1234567890" TO KUNDE-ID.
+           MOVE "Lars" TO FIRST-NAME.
+           MOVE "Hansen" TO LAST-NAME.
+           MOVE "DK12345678912345" TO KONTO-NUMMER.
+           Move 2500.75 TO BALANCE.
+           MOVE "DKK" TO VALUTA-CODE.
+
+           DISPLAY "Kunde ID: " KUNDE-ID.
+           DISPLAY "Name: " FIRST-NAME LAST-NAME
+           DISPLAY "Konto nummer: " KONTO-NUMMER.
+           DISPLAY "Balance: " BALANCE " " VALUTA-CODE.
+       STOP RUN.
