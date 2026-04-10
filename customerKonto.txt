@@ -1,0 +1,61 @@
+
+Kunde ID: 0000000001
+Lars Hansen
+Main Street 12, 1 TV
+5000 Odense, DK
+Tlf.: 12345678
+Email.: lars@email.com
+Konto ID: KONTO00001
+Konto type: SAVINGS
+Balance: 000123456 DKK
+
+Kunde ID: 0000000002
+Anna Jensen
+Second Avenue 45, 2 MF
+8000 Aarhus, DK
+Tlf.: 87654321
+Email.: anna@email.com
+Konto ID: KONTO00002
+Konto type: CHECKING
+Balance: 000987654 EUR
+
+Kunde ID: 0000000003
+Peter Nielsen
+Third Boulevard 7, 3 TH
+9000 Aalborg, DK
+Tlf.: 11223344
+Email.: peter@email.com
+Konto ID: KONTO00003
+Konto type: BUSINESS
+Balance: 001234500 USD
+
+Kunde ID: 0000000004
+Maria Olsen
+Fourth Road 99, 1 TV
+6700 Esbjerg, DK
+Tlf.: 44332211
+Email.: maria@email.com
+Konto ID: KONTO00004
+Konto type: PRIVATE
+Balance: 000000123 DKK
+
+Kunde ID: 0000000005
+Jonas Madsen
+Fifth Lane 3, 2 MF
+4000 Roskilde, DK
+Tlf.: 55667788
+Email.: jonas@email.com
+Konto ID: KONTO00005
+Konto type: SAVINGS
+Balance: 009999999 GBP
+
+Kunde ID: 0000000005
+Jonas Madsen
+Fifth Lane 3, 2 MF
+4000 Roskilde, DK
+Tlf.: 55667788
+Email.: jonas@email.com
+Konto ID: KONTO00005
+Konto type: SAVINGS
+Balance: 009999999 GBP
+

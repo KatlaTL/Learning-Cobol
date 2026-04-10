@@ -6,31 +6,3 @@ Main Street 12, 1 TV
 Tlf.: 12345678
 Email.: lars@email.com
 
-Kunde ID: 0000000002
-Anna Jensen
-Second Avenue 45, 2 MF
-8000 Aarhus, DK
-Tlf.: 87654321
-Email.: anna@email.com
-
-Kunde ID: 0000000003
-Peter Nielsen
-Third Boulevard 7, 3 TH
-9000 Aalborg, DK
-Tlf.: 11223344
-Email.: peter@email.com
-
-Kunde ID: 0000000004
-Maria Olsen
-Fourth Road 99, 1 TV
-6700 Esbjerg, DK
-Tlf.: 44332211
-Email.: maria@email.com
-
-Kunde ID: 0000000005
-Jonas Madsen
-Fifth Lane 3, 2 MF
-4000 Roskilde, DK
-Tlf.: 55667788
-Email.: jonas@email.com
-

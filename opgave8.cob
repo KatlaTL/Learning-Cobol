@@ -1,4 +1,4 @@
-       PROGRAM-ID. opgave7.
+       PROGRAM-ID. opgave8.
 
        ENVIRONMENT DIVISION.
            INPUT-OUTPUT SECTION.
@@ -6,7 +6,10 @@
                    SELECT CUSTOMER-FILE-IN ASSIGN "customers.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
 
-                   SELECT CUSTOMER-FILE-OUT ASSIGN "customersOut.txt"
+                   SELECT CUSTOMER-KONTO-IN ASSIGN "kontoOpl.txt"
+                   ORGANIZATION IS LINE SEQUENTIAL.
+
+                   SELECT CUSTOMER-KONTO-OUT ASSIGN "customerKonto.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
 
        DATA DIVISION.
@@ -15,17 +18,22 @@
                01 KUNDEOPL-IN.
                    COPY "customer.cpy".
                
-               FD CUSTOMER-FILE-OUT.
+               FD CUSTOMER-KONTO-OUT.
                01 KUNDEOPL-OUT.
                    05 LINE-CONTENT PIC X(300).
+
+               FD CUSTOMER-KONTO-IN.
+               01 KONTOOPL-IN.
+                   COPY "kontoOpl.cpy".
     
            WORKING-STORAGE SECTION.
                01 EOF-FLAG PIC X VALUE "N".
+               01 EOF-FLAG-KONTO PIC X VALUE "N".
                01 WS-LENGTH PIC 9(3) COMP.
        
        PROCEDURE DIVISION.
            OPEN INPUT CUSTOMER-FILE-IN.
-           OPEN OUTPUT CUSTOMER-FILE-OUT.
+           OPEN OUTPUT CUSTOMER-KONTO-OUT.
 
            PERFORM UNTIL EOF-FLAG = "Y"
                READ CUSTOMER-FILE-IN INTO KUNDEOPL-IN
@@ -37,6 +45,7 @@
                        PERFORM FORMAT-ADDRESS-LINE-2
                        PERFORM FORMAT-TELEFON
                        PERFORM FORMAT-EMAIL
+                       PERFORM FORMAT-KONTO
                        PERFORM FORMAT-EMPTY-LINE
                END-READ
             END-PERFORM.         
@@ -47,7 +56,8 @@
 
                STRING
                    "Kunde ID: " DELIMITED BY SIZE
-                   FUNCTION TRIM(KUNDE-ID) DELIMITED BY SPACE
+                   FUNCTION TRIM(KUNDE-ID OF KUNDEOPL-IN)
+                       DELIMITED BY SPACE
                    INTO LINE-CONTENT
                    WITH POINTER WS-LENGTH
                END-STRING
@@ -70,7 +80,7 @@
                END-STRING
 
                WRITE KUNDEOPL-OUT
-                   FROM LINE-CONTENT (1: WS-LENGTH)
+                   FROM LINE-CONTENT (1: WS-LENGTH) 
                    AFTER ADVANCING 1 LINE
             EXIT.
 
@@ -91,7 +101,7 @@
                END-STRING
 
                WRITE KUNDEOPL-OUT
-                   FROM LINE-CONTENT (1: WS-LENGTH)
+                   FROM LINE-CONTENT (1: WS-LENGTH) 
                    AFTER ADVANCING 1 LINE
             EXIT.
 
@@ -143,24 +153,89 @@
                END-STRING
 
                WRITE KUNDEOPL-OUT
-                   FROM LINE-CONTENT (1: WS-LENGTH)
+                   FROM LINE-CONTENT(1: WS-LENGTH) 
                    AFTER ADVANCING 1 LINE
            EXIT.
+
+           FORMAT-KONTO.
+                OPEN INPUT CUSTOMER-KONTO-IN.
+                
+                MOVE "N" TO EOF-FLAG-KONTO
+
+                PERFORM UNTIL EOF-FLAG-KONTO = "Y"
+                   READ CUSTOMER-KONTO-IN INTO KONTOOPL-IN
+                       AT END MOVE "Y" TO EOF-FLAG-KONTO
+                       NOT AT END
+                           IF KUNDE-ID OF KUNDEOPL-IN = 
+                               KUNDE-ID OF KONTOOPL-IN
+                           THEN
+
+                           MOVE SPACES TO LINE-CONTENT
+                           MOVE 1 TO WS-LENGTH
+                           STRING 
+                               "Konto ID: " DELIMITED BY SIZE
+                               FUNCTION TRIM(KONTO-ID)
+                                   DELIMITED BY SPACE
+                               INTO LINE-CONTENT
+                               WITH POINTER WS-LENGTH
+                           END-STRING
+
+                           WRITE KUNDEOPL-OUT
+                           FROM LINE-CONTENT (1: WS-LENGTH)
+                           AFTER ADVANCING 1 LINE
+
+
+                           MOVE SPACES TO LINE-CONTENT
+                           MOVE 1 TO WS-LENGTH
+                           STRING 
+                               "Konto type: " DELIMITED BY SIZE
+                               FUNCTION TRIM(KONTO-TYPE)
+                                   DELIMITED BY SPACE
+                               INTO LINE-CONTENT 
+                               WITH POINTER WS-LENGTH
+                           END-STRING
+
+                           WRITE KUNDEOPL-OUT
+                           FROM LINE-CONTENT (1: WS-LENGTH)
+                           AFTER ADVANCING 1 LINE
+
+
+                           MOVE SPACES TO LINE-CONTENT
+                           MOVE 1 TO WS-LENGTH
+                           STRING 
+                               "Balance: " DELIMITED BY SIZE
+                               FUNCTION TRIM(BALANCE OF KONTOOPL-IN)
+                                   DELIMITED BY SPACE
+                               " " DELIMITED BY SIZE
+                               FUNCTION TRIM (VALUTA-KD)
+                                   DELIMITED BY SPACE
+                               INTO LINE-CONTENT
+                               WITH POINTER WS-LENGTH
+                           END-STRING
+
+                           WRITE KUNDEOPL-OUT
+                           FROM LINE-CONTENT (1: WS-LENGTH)
+                           AFTER ADVANCING 1 LINE                              
+                              
+                           END-IF
+                       END-READ
+                   END-PERFORM.
+                CLOSE CUSTOMER-KONTO-IN.
+            EXIT.
 
            FORMAT-EMPTY-LINE.
                MOVE SPACES TO LINE-CONTENT
                MOVE 1 TO WS-LENGTH
-
                WRITE KUNDEOPL-OUT
                    FROM LINE-CONTENT (1: WS-LENGTH)
                    AFTER ADVANCING 1 LINE
-           EXIT. 
-
+           EXIT.         
+       
       * Dummy paragraph to top pargraph fallthrough  
            DUMMY-PARA.
-            EXIT.        
+            EXIT.
 
-           CLOSE CUSTOMER-FILE-OUT.
+           CLOSE CUSTOMER-KONTO-OUT.
            CLOSE CUSTOMER-FILE-IN. 
 
        STOP RUN.

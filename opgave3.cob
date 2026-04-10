@@ -36,7 +36,7 @@
                MOVE FULL-NAME(IX: 1) TO CURRENT-CHAR
 
       * The conditions are read from left to right, which is why the OR clause works here
-               IF CURRENT-CHAR NOT = SPACE OR PREVIOUS-CHAR NOT= SPACE  
+               IF CURRENT-CHAR NOT = SPACE OR PREVIOUS-CHAR NOT = SPACE  
                    ADD 1 TO OUTPUT-IX
                    MOVE FULL-NAME(IX: 1) 
                        TO FULL-NAME-WITHOUT-SPACES(OUTPUT-IX: 1)
