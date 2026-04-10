@@ -49,13 +49,3 @@ Konto ID: KONTO00005
 Konto type: SAVINGS
 Balance: 009999999 GBP
 
-Kunde ID: 0000000005
-Jonas Madsen
-Fifth Lane 3, 2 MF
-4000 Roskilde, DK
-Tlf.: 55667788
-Email.: jonas@email.com
-Konto ID: KONTO00005
-Konto type: SAVINGS
-Balance: 009999999 GBP
-

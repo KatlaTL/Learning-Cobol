@@ -31,13 +31,7 @@
                READ CUSTOMER-FILE-IN INTO KUNDEOPL-IN
                    AT END MOVE "Y" TO EOF-FLAG
                    NOT AT END
-                       PERFORM FORMAT-KUNDE-ID
-                       PERFORM FORMAT-NAME
-                       PERFORM FORMAT-ADDRESS-LINE-1
-                       PERFORM FORMAT-ADDRESS-LINE-2
-                       PERFORM FORMAT-TELEFON
-                       PERFORM FORMAT-EMAIL
-                       PERFORM FORMAT-EMPTY-LINE
+                       PERFORM FORMAT-KUNDE-ID THRU FORMAT-EMPTY-LINE
                END-READ
             END-PERFORM.         
 
