@@ -1,4 +1,4 @@
-       PROGRAM-ID. opgave10.
+       PROGRAM-ID. opgave11.
 
        ENVIRONMENT DIVISION.
            CONFIGURATION SECTION.
@@ -7,15 +7,15 @@
 
            INPUT-OUTPUT SECTION.
                FILE-CONTROL.
-                   SELECT FD-BANKER ASSIGN "opgave10/Banker.txt"
+                   SELECT FD-BANKER ASSIGN "opgave11/Banker.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
            
                    SELECT FD-TRANSACTION-IN
-                       ASSIGN "opgave10/Transaktioner.txt"
+                       ASSIGN "opgave11/Transaktioner.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
 
                    SELECT FD-TRANSACTION-OUT 
-                       ASSIGN "opgave10/Kontoudskrifter.txt"
+                       ASSIGN "opgave11/Kontoudskrifter.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
 
                    SELECT SORT-FILE ASSIGN TO WRK.
@@ -24,27 +24,27 @@
            FILE SECTION.
                FD FD-BANKER.
                01 IN-BANKER.
-                   COPY "opgave10/banker.cpy".
+                   COPY "opgave11/banker.cpy".
         
                FD FD-TRANSACTION-IN.
                01 IN-TRANSACTION.
-                   COPY "opgave10/transactions.cpy".
+                   COPY "opgave11/transactions.cpy".
                
                FD FD-TRANSACTION-OUT.
                01 OUT-TRANSACTION.
                    05 LINE-CONTENT PIC X(300).
                SD SORT-FILE.
                01 SORT-REC.
-                   COPY "opgave10/transactions.cpy".
+                   COPY "opgave11/transactions.cpy".
 
             WORKING-STORAGE SECTION.
                01 WS-BANKER-COUNT PIC 9(3) COMP VALUE 0.
                01 WS-BANKER-ENTRY OCCURS 0 TO 300 TIMES
                        DEPENDING ON WS-BANKER-COUNT
                        INDEXED BY IDX IDX2.
-                   COPY "opgave10/banker.cpy".
+                   COPY "opgave11/banker.cpy".
                01 WS-TEMP-BANKER.
-                   COPY "opgave10/banker.cpy".
+                   COPY "opgave11/banker.cpy".
                01 WS-EOF-FLAG-BANKER PIC X VALUE "N".
                01 WS-EOF-FLAG-TRANSACTION PIC X VALUE "N".
                01 WS-CURRENT-KONTO PIC X(15) VALUE SPACES.
@@ -184,7 +184,6 @@
                END-STRING
                PERFORM WRITE-LINE
                
-               MOVE SPACES TO LINE-CONTENT
                STRING
                     "Adresse: " DELIMITED BY SIZE
                     ADRESSE OF SORT-REC DELIMITED BY SPACE
@@ -210,8 +209,6 @@
            EXIT.
       *--------------------
            PRINT-CUSTOMER-TRANSACTIONS.
-                MOVE SPACES TO LINE-CONTENT
-
                 STRING
                    "Dato: " DELIMITED BY SIZE
                    FUNCTION TRIM(TIDSPUNKT OF SORT-REC)
@@ -243,71 +240,34 @@
            EXIT.
       *--------------------
            PRINT-CUSTOMER-SALDO.
-               MOVE WS-GROUP-SUM TO WS-GROUP-SUM-DISPLAY.
-               MOVE WS-GROUP-SUM-IN TO WS-GROUP-SUM-IN-DISPLAY.
-               MOVE WS-GROUP-SUM-OUT TO WS-GROUP-SUM-OUT-DISPLAY.
+               PERFORM PREP-SALDO-DISPLAY.
 
                MOVE SPACES TO LINE-CONTENT
                PERFORM WRITE-LINE
                PERFORM WRITE-LINE
                
-               IF WS-GROUP-SUM-IN < 0
-                   STRING
-                       "Totalt indbetalt (DKK): -" DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY(2: LENGTH 
-                                       OF WS-GROUP-SUM-IN-DISPLAY - 1))
-                           DELIMITED BY SPACE
-
-                       INTO LINE-CONTENT
-                   END-STRING
-               ELSE
-                   STRING
-                       "Totalt indbetalt (DKK): " DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY)
-                           DELIMITED BY SPACE
-                       INTO LINE-CONTENT
-                   END-STRING
-               END-IF
+               STRING
+                   "Totalt indbetalt (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
                PERFORM WRITE-LINE
 
-               MOVE SPACES TO LINE-CONTENT
-               IF WS-GROUP-SUM-OUT < 0
-                   STRING
-                       "Totalt udbetalt (DKK): -" DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY(2: LENGTH 
-                                       OF WS-GROUP-SUM-OUT-DISPLAY - 1))
-                           DELIMITED BY SPACE
-
-                       INTO LINE-CONTENT
-                   END-STRING
-               ELSE
-                   STRING
-                       "Totalt udbetalt (DKK): " DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY)
-                           DELIMITED BY SPACE
-                       INTO LINE-CONTENT
-                   END-STRING
-               END-IF
+               STRING
+                   "Totalt udbetalt (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
                PERFORM WRITE-LINE
-
-               MOVE SPACES TO LINE-CONTENT
-               IF WS-GROUP-SUM < 0
-                   STRING
-                       "Saldo (DKK): -" DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-DISPLAY(2: LENGTH 
-                                       OF WS-GROUP-SUM-DISPLAY - 1))
-                           DELIMITED BY SPACE
-
-                       INTO LINE-CONTENT
-                   END-STRING
-               ELSE
-                   STRING
-                       "Saldo (DKK): " DELIMITED BY SIZE
-                       FUNCTION TRIM(WS-GROUP-SUM-DISPLAY)
-                           DELIMITED BY SPACE
-                       INTO LINE-CONTENT
-                   END-STRING
-               END-IF
+               
+               STRING
+                   "Saldo (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
                PERFORM WRITE-LINE
 
                MOVE SPACES TO LINE-CONTENT
@@ -316,8 +276,7 @@
 
                MOVE "Med venlig hilsen" TO LINE-CONTENT
                PERFORM WRITE-LINE
-               
-               MOVE SPACES TO LINE-CONTENT
+
                MOVE "Asgers bank" TO LINE-CONTENT
                PERFORM WRITE-LINE
 
@@ -326,6 +285,54 @@
                PERFORM WRITE-LINE
                PERFORM WRITE-LINE
            EXIT.
+      *--------------------
+           PREP-SALDO-DISPLAY.
+               MOVE WS-GROUP-SUM TO WS-GROUP-SUM-DISPLAY.
+               MOVE WS-GROUP-SUM-IN TO WS-GROUP-SUM-IN-DISPLAY.
+               MOVE WS-GROUP-SUM-OUT TO WS-GROUP-SUM-OUT-DISPLAY.
+
+               IF WS-GROUP-SUM < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-DISPLAY)
+                       TO WS-GROUP-SUM-DISPLAY
+               END-IF
+
+               IF WS-GROUP-SUM-IN < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-IN-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-IN-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY)
+                       TO WS-GROUP-SUM-IN-DISPLAY
+               END-IF
+
+               IF WS-GROUP-SUM-OUT < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-IN-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-OUT-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY)
+                       TO WS-GROUP-SUM-OUT-DISPLAY
+               END-IF
+            EXIT.
       *--------------------
            ADD-TO-GROUP-SUM.
                PERFORM CONVERT-VALUTA.
@@ -375,7 +382,6 @@
                        END-STRING
                        PERFORM WRITE-LINE
                        
-                       MOVE SPACES TO LINE-CONTENT
                        STRING
                            WS-SPACES DELIMITED BY SIZE
                            "Bank: " DELIMITED BY SIZE
@@ -385,7 +391,6 @@
                        END-STRING
                        PERFORM WRITE-LINE
                        
-                       MOVE SPACES TO LINE-CONTENT
                        STRING
                            WS-SPACES DELIMITED BY SIZE
                            "Bankadresse: " DELIMITED BY SIZE
@@ -395,7 +400,6 @@
                        END-STRING
                        PERFORM WRITE-LINE
 
-                       MOVE SPACES TO LINE-CONTENT
                        STRING
                            WS-SPACES DELIMITED BY SIZE
                            "Telefon: " DELIMITED BY SIZE
@@ -405,7 +409,6 @@
                        END-STRING
                        PERFORM WRITE-LINE
                        
-                       MOVE SPACES TO LINE-CONTENT
                        STRING
                            WS-SPACES DELIMITED BY SIZE
                            "E-maiL: " DELIMITED BY SIZE

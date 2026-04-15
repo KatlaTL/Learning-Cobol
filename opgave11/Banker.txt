@@ -1,0 +1,15 @@
+0001Nykredit Bank                 Strandvejen 914B, 8900 Randers                    +45 75335375   kontakt@nykreditbank.dk       
+0002Nykredit Bank                 Amagerbrogade 225C, 6700 Aarhus                   +45 49923253   kontakt@nykreditbank.dk       
+0003Sydbank                       Strandvejen 198, 6700 Naestved                    +45 26187908   kontakt@sydbank.dk            
+0004Nykredit Bank                 Oesterbrogade 479, 7100 Aalborg                   +45 20231318   kontakt@nykreditbank.dk       
+0005Jyske Bank                    Noerreport 178B, 2100 Koebenhavn                  +45 81794249   kontakt@jyskebank.dk          
+0006Handelsbanken                 Strandvejen 917A, 4700 Helsingoer                 +45 74031586   kontakt@handelsbanken.dk      
+0007Sydbank                       Vesterbrogade 363, 8900 Vejle                     +45 11858245   kontakt@sydbank.dk            
+0008Danske Bank                   Oesterbrogade 763B, 8900 Aalborg                  +45 44590623   kontakt@danskebank.dk         
+0009Jyske Bank                    Soendergade 56B, 2100 Esbjerg                     +45 58441183   kontakt@jyskebank.dk          
+0010Spar Nord Bank                Oesterbrogade 572A, 6700 Aalborg                  +45 26005198   kontakt@sparnordbank.dk       
+0011Spar Nord Bank                Strandvejen 670A, 4700 Odense                     +45 61833141   kontakt@sparnordbank.dk       
+0012Handelsbanken                 Soendergade 756, 4700 Roskilde                    +45 38400933   kontakt@handelsbanken.dk      
+0013Nordea                        Soendergade 385A, 5000 Aarhus                     +45 49690048   kontakt@nordea.dk             
+0014Sydbank                       Soendergade 27, 8000 Randers                      +45 47076052   kontakt@sydbank.dk            
+0015Nykredit Bank                 Oesterbrogade 589A, 8000 Aalborg                  +45 14125598   kontakt@nykreditbank.dk       

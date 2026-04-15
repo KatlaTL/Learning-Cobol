@@ -4,9 +4,9 @@ Kunde: Niels
 Adresse: Vesterbrogade
 
                                              Registreringsnummer: 0005
-                                             Bank: Jyske
-                                             Bankadresse: Noerreport
-                                             Telefon: +45
+                                             Bank: Jyskegsnummer: 0005
+                                             Bankadresse: Noerreport05
+                                             Telefon: +45 Noerreport05
                                              E-maiL: kontakt@jyskebank.dk
 
 
@@ -15,12 +15,12 @@ Kontoudskrift for kontonr.: 175-56-22272
 Dato: 2022-12-18-19.09.30.000000, Transaktionstype: Overfoersel, Beløb: -27240.92 EUR, Butik: Supermarked
 Dato: 2020-09-17-17.46.30.000000, Transaktionstype: Overfoersel, Beløb: 31036.01 DKK, Butik: Fitnesscenter
 Dato: 2023-10-19-03.10.03.000000, Transaktionstype: Indbetaling, Beløb: 63918.04 USD, Butik: Fitnesscenter
-Dato: 2021-04-16-06.52.03.000000, Transaktionstype: Indbetaling, Beløb: -66752.82 USD, Butik: Bageri
+Dato: 2021-04-16-06.52.03.000000, Transaktionstype: Indbetaling, Beløb: -66752.82 USD, Butik: Bagericenter
 
 
-Totalt indbetalt (DKK): -19.254.739,40
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): -19.204.739,40
+Totalt indbetalt (DKK): -19.254.739,4040
+Totalt udbetalt (DKK): 0,00.254.739,4040
+Saldo (DKK): -19.204.739,404054.739,4040
 
 
 Med venlig hilsen
@@ -33,9 +33,9 @@ Kunde: Hanne
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0001
-                                             Bank: Nykredit
-                                             Bankadresse: Strandvejen
-                                             Telefon: +45
+                                             Bank: Nykreditummer: 0001
+                                             Bankadresse: Strandvejen1
+                                             Telefon: +45 Strandvejen1
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -43,13 +43,13 @@ Kontoudskrift for kontonr.: 196-45-21059
 
 Dato: 2021-12-07-10.13.32.000000, Transaktionstype: Overfoersel, Beløb: -86739.05 DKK, Butik: Biograf
 Dato: 2022-04-08-18.06.33.000000, Transaktionstype: Udbetaling, Beløb: 19379.60 DKK, Butik: Fitnesscenter
-Dato: 2022-02-08-20.40.08.000000, Transaktionstype: Overfoersel, Beløb: -5008.04 EUR, Butik: Apotek
-Dato: 2021-06-26-00.14.37.000000, Transaktionstype: Indbetaling, Beløb: 33556.45 USD, Butik: Supermarked
+Dato: 2022-02-08-20.40.08.000000, Transaktionstype: Overfoersel, Beløb: -5008.04 EUR, Butik: Apotekcenter
+Dato: 2021-06-26-00.14.37.000000, Transaktionstype: Indbetaling, Beløb: 33556.45 USD, Butik: Supermarkedr
 
 
 Totalt indbetalt (DKK): 10.388.451,00
-Totalt udbetalt (DKK): 1.937.960,00
-Saldo (DKK): 12.376.411,00
+Totalt udbetalt (DKK): 1.937.960,0000
+Saldo (DKK): 12.376.411,0037.960,0000
 
 
 Med venlig hilsen
@@ -62,9 +62,9 @@ Kunde: Niels
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0002
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0002
                                              Bankadresse: Amagerbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Amagerbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -73,13 +73,13 @@ Kontoudskrift for kontonr.: 298-46-32896
 Dato: 2020-05-25-02.30.10.000000, Transaktionstype: Udbetaling, Beløb: 99922.54 DKK, Butik: Biograf
 Dato: 2020-10-14-00.05.04.000000, Transaktionstype: Overfoersel, Beløb: -54642.90 DKK, Butik: Boghandel
 Dato: 2023-01-17-05.41.05.000000, Transaktionstype: Indbetaling, Beløb: -24352.08 USD, Butik: Boghandel
-Dato: 2023-12-12-21.38.01.000000, Transaktionstype: Udbetaling, Beløb: 25759.45 DKK, Butik: Cafe
-Dato: 2021-09-22-13.54.44.000000, Transaktionstype: Overfoersel, Beløb: 16797.48 DKK, Butik: Apotek
+Dato: 2023-12-12-21.38.01.000000, Transaktionstype: Udbetaling, Beløb: 25759.45 DKK, Butik: Cafeghandel
+Dato: 2021-09-22-13.54.44.000000, Transaktionstype: Overfoersel, Beløb: 16797.48 DKK, Butik: Apotekndel
 
 
-Totalt indbetalt (DKK): -20.343.956,40
-Totalt udbetalt (DKK): 12.568.199,00
-Saldo (DKK): -7.725.757,40
+Totalt indbetalt (DKK): -20.343.956,4040
+Totalt udbetalt (DKK): 12.568.199,004040
+Saldo (DKK): -7.725.757,40,40.199,004040
 
 
 Med venlig hilsen
@@ -92,23 +92,23 @@ Kunde: Mette
 Adresse: Soendergade
 
                                              Registreringsnummer: 0014
-                                             Bank: Sydbank
-                                             Bankadresse: Soendergade
-                                             Telefon: +45
+                                             Bank: Sydbanknummer: 0014
+                                             Bankadresse: Soendergade4
+                                             Telefon: +45 Soendergade4
                                              E-maiL: kontakt@sydbank.dk
 
 
 Kontoudskrift for kontonr.: 317-20-83098
 
 Dato: 2022-04-15-03.02.18.000000, Transaktionstype: Indbetaling, Beløb: 16337.81 DKK, Butik: Boghandel
-Dato: 2021-04-18-10.57.58.000000, Transaktionstype: Indbetaling, Beløb: 6780.61 USD, Butik: Apotek
-Dato: 2023-01-28-03.44.33.000000, Transaktionstype: Overfoersel, Beløb: -97965.09 EUR, Butik: Apotek
-Dato: 2020-12-17-11.34.35.000000, Transaktionstype: Udbetaling, Beløb: 57767.97 DKK, Butik: Bageri
+Dato: 2021-04-18-10.57.58.000000, Transaktionstype: Indbetaling, Beløb: 6780.61 USD, Butik: Apotekndel
+Dato: 2023-01-28-03.44.33.000000, Transaktionstype: Overfoersel, Beløb: -97965.09 EUR, Butik: Apotekel
+Dato: 2020-12-17-11.34.35.000000, Transaktionstype: Udbetaling, Beløb: 57767.97 DKK, Butik: Bageriekel
 
 
-Totalt indbetalt (DKK): -67.229.221,70
-Totalt udbetalt (DKK): 5.776.797,00
-Saldo (DKK): -61.402.424,70
+Totalt indbetalt (DKK): -67.229.221,7070
+Totalt udbetalt (DKK): 5.776.797,00,7070
+Saldo (DKK): -61.402.424,7070797,00,7070
 
 
 Med venlig hilsen
@@ -121,21 +121,21 @@ Kunde: Niels
 Adresse: Frederiks
 
                                              Registreringsnummer: 0015
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0015
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
 Kontoudskrift for kontonr.: 341-81-87828
 
 Dato: 2025-08-18-16.21.21.000000, Transaktionstype: Indbetaling, Beløb: 65047.02 DKK, Butik: Supermarked
-Dato: 2020-03-21-11.35.58.000000, Transaktionstype: Udbetaling, Beløb: -68538.67 DKK, Butik: Cafe
+Dato: 2020-03-21-11.35.58.000000, Transaktionstype: Udbetaling, Beløb: -68538.67 DKK, Butik: Cafermarked
 
 
 Totalt indbetalt (DKK): 6.504.702,00
-Totalt udbetalt (DKK): -6.853.867,00
-Saldo (DKK): -299.165,00
+Totalt udbetalt (DKK): -6.853.867,00,00
+Saldo (DKK): -299.165,0065,00.867,00,00
 
 
 Med venlig hilsen
@@ -148,9 +148,9 @@ Kunde: Anne
 Adresse: Oesterbrogade
 
                                              Registreringsnummer: 0004
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0004
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -158,14 +158,14 @@ Kontoudskrift for kontonr.: 354-28-98682
 
 Dato: 2020-02-20-23.39.35.000000, Transaktionstype: Indbetaling, Beløb: 11418.97 DKK, Butik: Tankstation
 Dato: 2022-06-12-23.34.01.000000, Transaktionstype: Overfoersel, Beløb: -27886.96 DKK, Butik: Moebelbutik
-Dato: 2022-07-25-21.20.13.000000, Transaktionstype: Indbetaling, Beløb: 87137.94 DKK, Butik: Bageri
-Dato: 2021-06-15-21.11.34.000000, Transaktionstype: Overfoersel, Beløb: 72034.41 EUR, Butik: Toejbutik
-Dato: 2021-09-08-08.24.03.000000, Transaktionstype: Udbetaling, Beløb: -69660.57 DKK, Butik: Cafe
+Dato: 2022-07-25-21.20.13.000000, Transaktionstype: Indbetaling, Beløb: 87137.94 DKK, Butik: Bagerilbutik
+Dato: 2021-06-15-21.11.34.000000, Transaktionstype: Overfoersel, Beløb: 72034.41 EUR, Butik: Toejbutiktik
+Dato: 2021-09-08-08.24.03.000000, Transaktionstype: Udbetaling, Beløb: -69660.57 DKK, Butik: Cafebutiktik
 
 
 Totalt indbetalt (DKK): 61.092.802,50
-Totalt udbetalt (DKK): -6.966.057,00
-Saldo (DKK): 54.176.745,50
+Totalt udbetalt (DKK): -6.966.057,00,00
+Saldo (DKK): 54.176.745,50966.057,00,00
 
 
 Med venlig hilsen
@@ -178,9 +178,9 @@ Kunde: Jens
 Adresse: Soendergade
 
                                              Registreringsnummer: 0015
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0015
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -192,8 +192,8 @@ Dato: 2021-09-12-22.45.37.000000, Transaktionstype: Udbetaling, Beløb: -72970.1
 
 
 Totalt indbetalt (DKK): 11.836.870,00
-Totalt udbetalt (DKK): -7.297.017,00
-Saldo (DKK): 4.589.853,00
+Totalt udbetalt (DKK): -7.297.017,00,00
+Saldo (DKK): 4.589.853,00.297.017,00,00
 
 
 Med venlig hilsen
@@ -206,9 +206,9 @@ Kunde: Hanne
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0012
-                                             Bank: Handelsbanken
-                                             Bankadresse: Soendergade
-                                             Telefon: +45
+                                             Bank: Handelsbanken: 0012
+                                             Bankadresse: Soendergade2
+                                             Telefon: +45 Soendergade2
                                              E-maiL: kontakt@handelsbanken.dk
 
 
@@ -217,9 +217,9 @@ Kontoudskrift for kontonr.: 438-28-53549
 Dato: 2022-10-09-23.17.13.000000, Transaktionstype: Overfoersel, Beløb: -94119.18 EUR, Butik: Bageri
 
 
-Totalt indbetalt (DKK): -70.589.385,00
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): -70.539.385,00
+Totalt indbetalt (DKK): -70.589.385,0000
+Totalt udbetalt (DKK): 0,00.589.385,0000
+Saldo (DKK): -70.539.385,000089.385,0000
 
 
 Med venlig hilsen
@@ -232,9 +232,9 @@ Kunde: Marie
 Adresse: Vesterbrogade
 
                                              Registreringsnummer: 0002
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0002
                                              Bankadresse: Amagerbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Amagerbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -242,12 +242,12 @@ Kontoudskrift for kontonr.: 472-65-43513
 
 Dato: 2023-07-20-21.29.30.000000, Transaktionstype: Indbetaling, Beløb: 41265.97 USD, Butik: Tankstation
 Dato: 2024-05-03-10.38.14.000000, Transaktionstype: Overfoersel, Beløb: -82148.91 DKK, Butik: Restaurant
-Dato: 2022-10-08-15.56.52.000000, Transaktionstype: Overfoersel, Beløb: -61068.19 EUR, Butik: Cafe
+Dato: 2022-10-08-15.56.52.000000, Transaktionstype: Overfoersel, Beløb: -61068.19 EUR, Butik: Cafeaurant
 
 
-Totalt indbetalt (DKK): -25.955.173,90
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): -25.905.173,90
+Totalt indbetalt (DKK): -25.955.173,9090
+Totalt udbetalt (DKK): 0,00.955.173,9090
+Saldo (DKK): -25.905.173,909055.173,9090
 
 
 Med venlig hilsen
@@ -260,23 +260,23 @@ Kunde: Niels
 Adresse: Vesterbrogade
 
                                              Registreringsnummer: 0006
-                                             Bank: Handelsbanken
-                                             Bankadresse: Strandvejen
-                                             Telefon: +45
+                                             Bank: Handelsbanken: 0006
+                                             Bankadresse: Strandvejen6
+                                             Telefon: +45 Strandvejen6
                                              E-maiL: kontakt@handelsbanken.dk
 
 
 Kontoudskrift for kontonr.: 475-50-72469
 
 Dato: 2021-11-08-04.48.00.000000, Transaktionstype: Udbetaling, Beløb: -52076.84 DKK, Butik: Supermarked
-Dato: 2023-07-21-12.41.28.000000, Transaktionstype: Overfoersel, Beløb: -53354.90 EUR, Butik: Boghandel
-Dato: 2023-02-05-01.14.54.000000, Transaktionstype: Overfoersel, Beløb: -90049.19 EUR, Butik: Bageri
-Dato: 2024-03-31-07.07.20.000000, Transaktionstype: Overfoersel, Beløb: 71097.48 EUR, Butik: Boghandel
+Dato: 2023-07-21-12.41.28.000000, Transaktionstype: Overfoersel, Beløb: -53354.90 EUR, Butik: Boghandeld
+Dato: 2023-02-05-01.14.54.000000, Transaktionstype: Overfoersel, Beløb: -90049.19 EUR, Butik: Bagerideld
+Dato: 2024-03-31-07.07.20.000000, Transaktionstype: Overfoersel, Beløb: 71097.48 EUR, Butik: Boghandelld
 
 
-Totalt indbetalt (DKK): -54.229.957,50
-Totalt udbetalt (DKK): -5.207.684,00
-Saldo (DKK): -59.387.641,50
+Totalt indbetalt (DKK): -54.229.957,5050
+Totalt udbetalt (DKK): -5.207.684,00,000
+Saldo (DKK): -59.387.641,5050.684,00,000
 
 
 Med venlig hilsen
@@ -289,9 +289,9 @@ Kunde: Camilla
 Adresse: Strandvejen
 
                                              Registreringsnummer: 0009
-                                             Bank: Jyske
-                                             Bankadresse: Soendergade
-                                             Telefon: +45
+                                             Bank: Jyskegsnummer: 0009
+                                             Bankadresse: Soendergade9
+                                             Telefon: +45 Soendergade9
                                              E-maiL: kontakt@jyskebank.dk
 
 
@@ -300,13 +300,13 @@ Kontoudskrift for kontonr.: 512-89-66509
 Dato: 2023-03-06-05.30.23.000000, Transaktionstype: Indbetaling, Beløb: 64067.87 DKK, Butik: Apotek
 Dato: 2022-09-20-12.32.15.000000, Transaktionstype: Indbetaling, Beløb: 37923.40 EUR, Butik: Biograf
 Dato: 2023-04-28-12.18.41.000000, Transaktionstype: Overfoersel, Beløb: -51422.83 USD, Butik: Restaurant
-Dato: 2024-02-21-00.50.46.000000, Transaktionstype: Overfoersel, Beløb: -60875.88 DKK, Butik: Bageri
+Dato: 2024-02-21-00.50.46.000000, Transaktionstype: Overfoersel, Beløb: -60875.88 DKK, Butik: Bagerirant
 Dato: 2020-08-24-21.15.36.000000, Transaktionstype: Indbetaling, Beløb: 82126.78 EUR, Butik: Blomsterhandler
 
 
 Totalt indbetalt (DKK): 55.389.309,60
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): 55.439.309,60
+Totalt udbetalt (DKK): 0,00389.309,60
+Saldo (DKK): 55.439.309,600389.309,60
 
 
 Med venlig hilsen
@@ -319,22 +319,22 @@ Kunde: Camilla
 Adresse: Amagerbrogade
 
                                              Registreringsnummer: 0004
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0004
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
 Kontoudskrift for kontonr.: 605-40-71013
 
 Dato: 2023-01-04-02.36.55.000000, Transaktionstype: Udbetaling, Beløb: -93527.82 USD, Butik: Moebelbutik
-Dato: 2023-07-05-19.04.25.000000, Transaktionstype: Overfoersel, Beløb: 10008.47 DKK, Butik: Cafe
+Dato: 2023-07-05-19.04.25.000000, Transaktionstype: Overfoersel, Beløb: 10008.47 DKK, Butik: Cafeelbutik
 Dato: 2025-09-18-01.29.34.000000, Transaktionstype: Udbetaling, Beløb: 10316.17 DKK, Butik: Fitnesscenter
 
 
 Totalt indbetalt (DKK): 1.000.847,00
-Totalt udbetalt (DKK): -62.567.300,60
-Saldo (DKK): -61.516.453,60
+Totalt udbetalt (DKK): -62.567.300,6060
+Saldo (DKK): -61.516.453,60607.300,6060
 
 
 Med venlig hilsen
@@ -347,9 +347,9 @@ Kunde: Anne
 Adresse: Oesterbrogade
 
                                              Registreringsnummer: 0015
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0015
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -359,8 +359,8 @@ Dato: 2023-08-20-16.54.31.000000, Transaktionstype: Overfoersel, Beløb: 53814.0
 
 
 Totalt indbetalt (DKK): 5.381.403,00
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): 5.431.403,00
+Totalt udbetalt (DKK): 0,0081.403,00
+Saldo (DKK): 5.431.403,000081.403,00
 
 
 Med venlig hilsen
@@ -373,9 +373,9 @@ Kunde: Camilla
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0001
-                                             Bank: Nykredit
-                                             Bankadresse: Strandvejen
-                                             Telefon: +45
+                                             Bank: Nykreditummer: 0001
+                                             Bankadresse: Strandvejen1
+                                             Telefon: +45 Strandvejen1
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -383,13 +383,13 @@ Kontoudskrift for kontonr.: 705-56-23609
 
 Dato: 2022-03-31-22.27.58.000000, Transaktionstype: Overfoersel, Beløb: -85526.48 USD, Butik: Apotek
 Dato: 2023-12-18-20.02.50.000000, Transaktionstype: Overfoersel, Beløb: 11976.90 USD, Butik: Supermarked
-Dato: 2025-06-12-23.53.16.000000, Transaktionstype: Overfoersel, Beløb: 26938.35 DKK, Butik: Apotek
-Dato: 2021-09-17-02.16.00.000000, Transaktionstype: Udbetaling, Beløb: -29313.59 EUR, Butik: Cafe
+Dato: 2025-06-12-23.53.16.000000, Transaktionstype: Overfoersel, Beløb: 26938.35 DKK, Butik: Apotekarked
+Dato: 2021-09-17-02.16.00.000000, Transaktionstype: Udbetaling, Beløb: -29313.59 EUR, Butik: Cafeekarked
 
 
-Totalt indbetalt (DKK): -47.319.879,40
-Totalt udbetalt (DKK): -21.985.192,50
-Saldo (DKK): -69.255.071,90
+Totalt indbetalt (DKK): -47.319.879,4040
+Totalt udbetalt (DKK): -21.985.192,50500
+Saldo (DKK): -69.255.071,90905.192,50500
 
 
 Med venlig hilsen
@@ -402,9 +402,9 @@ Kunde: Lars
 Adresse: Oesterbrogade
 
                                              Registreringsnummer: 0005
-                                             Bank: Jyske
-                                             Bankadresse: Noerreport
-                                             Telefon: +45
+                                             Bank: Jyskegsnummer: 0005
+                                             Bankadresse: Noerreport05
+                                             Telefon: +45 Noerreport05
                                              E-maiL: kontakt@jyskebank.dk
 
 
@@ -413,9 +413,9 @@ Kontoudskrift for kontonr.: 758-74-41090
 Dato: 2021-09-20-10.25.30.000000, Transaktionstype: Indbetaling, Beløb: -34121.15 USD, Butik: Tankstation
 
 
-Totalt indbetalt (DKK): -23.202.382,00
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): -23.152.382,00
+Totalt indbetalt (DKK): -23.202.382,0000
+Totalt udbetalt (DKK): 0,00.202.382,0000
+Saldo (DKK): -23.152.382,000002.382,0000
 
 
 Med venlig hilsen
@@ -428,24 +428,24 @@ Kunde: Soeren
 Adresse: Noerreport
 
                                              Registreringsnummer: 0007
-                                             Bank: Sydbank
+                                             Bank: Sydbanknummer: 0007
                                              Bankadresse: Vesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Vesterbrogade
                                              E-maiL: kontakt@sydbank.dk
 
 
 Kontoudskrift for kontonr.: 782-37-58691
 
 Dato: 2021-10-13-21.55.19.000000, Transaktionstype: Indbetaling, Beløb: 14317.60 EUR, Butik: Biograf
-Dato: 2025-10-07-12.58.24.000000, Transaktionstype: Udbetaling, Beløb: 44136.13 USD, Butik: Biograf
+Dato: 2025-10-07-12.58.24.000000, Transaktionstype: Udbetaling, Beløb: 44136.13 USD, Butik: Biograff
 Dato: 2024-08-14-12.17.54.000000, Transaktionstype: Indbetaling, Beløb: 35746.32 EUR, Butik: Fitnesscenter
-Dato: 2024-10-09-14.36.44.000000, Transaktionstype: Indbetaling, Beløb: 59770.65 DKK, Butik: Cafe
-Dato: 2023-03-10-09.49.52.000000, Transaktionstype: Udbetaling, Beløb: 49085.76 DKK, Butik: Fitnesscenter
+Dato: 2024-10-09-14.36.44.000000, Transaktionstype: Indbetaling, Beløb: 59770.65 DKK, Butik: Cafeesscenter
+Dato: 2023-03-10-09.49.52.000000, Transaktionstype: Udbetaling, Beløb: 49085.76 DKK, Butik: Fitnesscenterr
 
 
 Totalt indbetalt (DKK): 43.525.005,00
-Totalt udbetalt (DKK): 34.921.144,40
-Saldo (DKK): 78.496.149,40
+Totalt udbetalt (DKK): 34.921.144,400
+Saldo (DKK): 78.496.149,40921.144,400
 
 
 Med venlig hilsen
@@ -458,9 +458,9 @@ Kunde: Lars
 Adresse: Soendergade
 
                                              Registreringsnummer: 0011
-                                             Bank: Spar
-                                             Bankadresse: Strandvejen
-                                             Telefon: +45
+                                             Bank: Sparngsnummer: 0011
+                                             Bankadresse: Strandvejen1
+                                             Telefon: +45 Strandvejen1
                                              E-maiL: kontakt@sparnordbank.dk
 
 
@@ -470,9 +470,9 @@ Dato: 2022-05-11-09.36.48.000000, Transaktionstype: Udbetaling, Beløb: 9983.28 
 Dato: 2025-09-06-17.48.22.000000, Transaktionstype: Overfoersel, Beløb: -7023.04 USD, Butik: Boghandel
 
 
-Totalt indbetalt (DKK): -4.775.667,20
-Totalt udbetalt (DKK): 998.328,00
-Saldo (DKK): -3.727.339,20
+Totalt indbetalt (DKK): -4.775.667,20,20
+Totalt udbetalt (DKK): 998.328,007,20,20
+Saldo (DKK): -3.727.339,20,208,007,20,20
 
 
 Med venlig hilsen
@@ -485,9 +485,9 @@ Kunde: Camilla
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0013
-                                             Bank: Nordea
-                                             Bankadresse: Soendergade
-                                             Telefon: +45
+                                             Bank: Nordeasnummer: 0013
+                                             Bankadresse: Soendergade3
+                                             Telefon: +45 Soendergade3
                                              E-maiL: kontakt@nordea.dk
 
 
@@ -497,8 +497,8 @@ Dato: 2025-10-02-09.54.36.000000, Transaktionstype: Indbetaling, Beløb: 8601.30
 
 
 Totalt indbetalt (DKK): 6.450.975,00
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): 6.500.975,00
+Totalt udbetalt (DKK): 0,0050.975,00
+Saldo (DKK): 6.500.975,000050.975,00
 
 
 Med venlig hilsen
@@ -511,9 +511,9 @@ Kunde: Marie
 Adresse: Hovedgaden
 
                                              Registreringsnummer: 0004
-                                             Bank: Nykredit
+                                             Bank: Nykreditummer: 0004
                                              Bankadresse: Oesterbrogade
-                                             Telefon: +45
+                                             Telefon: +45 Oesterbrogade
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -523,9 +523,9 @@ Dato: 2023-07-31-13.01.01.000000, Transaktionstype: Indbetaling, Beløb: -25354.
 Dato: 2020-12-02-17.31.29.000000, Transaktionstype: Indbetaling, Beløb: -13533.80 EUR, Butik: Fitnesscenter
 
 
-Totalt indbetalt (DKK): -29.166.097,50
-Totalt udbetalt (DKK): 0,00
-Saldo (DKK): -29.116.097,50
+Totalt indbetalt (DKK): -29.166.097,5050
+Totalt udbetalt (DKK): 0,00.166.097,5050
+Saldo (DKK): -29.116.097,505066.097,5050
 
 
 Med venlig hilsen
@@ -538,9 +538,9 @@ Kunde: Lars
 Adresse: Vesterbrogade
 
                                              Registreringsnummer: 0001
-                                             Bank: Nykredit
-                                             Bankadresse: Strandvejen
-                                             Telefon: +45
+                                             Bank: Nykreditummer: 0001
+                                             Bankadresse: Strandvejen1
+                                             Telefon: +45 Strandvejen1
                                              E-maiL: kontakt@nykreditbank.dk
 
 
@@ -552,8 +552,8 @@ Dato: 2020-06-30-09.39.53.000000, Transaktionstype: Overfoersel, Beløb: 75964.5
 
 
 Totalt indbetalt (DKK): 2.028.814,00
-Totalt udbetalt (DKK): -1.887.017,00
-Saldo (DKK): 191.797,00
+Totalt udbetalt (DKK): -1.887.017,00,00
+Saldo (DKK): 191.797,00-1.887.017,00,00
 
 
 Med venlig hilsen
