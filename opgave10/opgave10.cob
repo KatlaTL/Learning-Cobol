@@ -1,13 +1,21 @@
        PROGRAM-ID. opgave10.
 
        ENVIRONMENT DIVISION.
+           CONFIGURATION SECTION.
+               SPECIAL-NAMES.
+                  DECIMAL-POINT IS COMMA.
+
            INPUT-OUTPUT SECTION.
                FILE-CONTROL.
                    SELECT FD-BANKER ASSIGN "opgave10/Banker.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
            
-                   SELECT FD-TRANSACTION
+                   SELECT FD-TRANSACTION-IN
                        ASSIGN "opgave10/Transaktioner.txt"
+                   ORGANIZATION IS LINE SEQUENTIAL.
+
+                   SELECT FD-TRANSACTION-OUT 
+                       ASSIGN "opgave10/Kontoudskrifter.txt"
                    ORGANIZATION IS LINE SEQUENTIAL.
 
                    SELECT SORT-FILE ASSIGN TO WRK.
@@ -18,10 +26,13 @@
                01 IN-BANKER.
                    COPY "opgave10/banker.cpy".
         
-               FD FD-TRANSACTION.
+               FD FD-TRANSACTION-IN.
                01 IN-TRANSACTION.
                    COPY "opgave10/transactions.cpy".
                
+               FD FD-TRANSACTION-OUT.
+               01 OUT-TRANSACTION.
+                   05 LINE-CONTENT PIC X(300).
                SD SORT-FILE.
                01 SORT-REC.
                    COPY "opgave10/transactions.cpy".
@@ -37,11 +48,14 @@
                01 WS-EOF-FLAG-BANKER PIC X VALUE "N".
                01 WS-EOF-FLAG-TRANSACTION PIC X VALUE "N".
                01 WS-CURRENT-KONTO PIC X(15) VALUE SPACES.
+               01 WS-CONVERTED-VALUTA-AMOUNT PIC S9(11)V99 COMP-3.
                01 WS-GROUP-SUM PIC S9(11)V99 COMP-3 VALUE 50000.
+               01 WS-GROUP-SUM-DISPLAY PIC Z.ZZZ.ZZZ.ZZ9,99.
                01 WS-GROUP-SUM-IN PIC S9(11)V99 COMP-3 VALUE 0.
+               01 WS-GROUP-SUM-IN-DISPLAY PIC Z.ZZZ.ZZZ.ZZ9,99.
                01 WS-GROUP-SUM-OUT PIC S9(11)V99 COMP-3 VALUE 0.
+               01 WS-GROUP-SUM-OUT-DISPLAY PIC Z.ZZZ.ZZZ.ZZ9,99.
                01 WS-SPACES PIC X(45) VALUE SPACES.
-               01 WS-LINE PIC X(150).
                 
        
        PROCEDURE DIVISION.
@@ -101,9 +115,9 @@
             EXIT.
       *--------------------
            LOAD-TRANSACTIONERS-FILE.
-               OPEN INPUT FD-TRANSACTION.
+               OPEN INPUT FD-TRANSACTION-IN.
                    PERFORM UNTIL WS-EOF-FLAG-TRANSACTION = "Y"
-                       READ FD-TRANSACTION
+                       READ FD-TRANSACTION-IN
                            AT END
                                MOVE "Y" TO WS-EOF-FLAG-TRANSACTION
                            NOT AT END
@@ -111,10 +125,11 @@
                                RELEASE SORT-REC
                        END-READ
                     END-PERFORM.
-               CLOSE FD-TRANSACTION.
+               CLOSE FD-TRANSACTION-IN.
             EXIT.
       *--------------------
            PROCESS-SORTED.
+               OPEN OUTPUT FD-TRANSACTION-OUT.
                PERFORM UNTIL 1 = 2
                    RETURN SORT-FILE
                        AT END EXIT PERFORM 
@@ -151,21 +166,46 @@
 
       * Print saldo for last group
                PERFORM PRINT-CUSTOMER-SALDO
+               
+               CLOSE FD-TRANSACTION-OUT.
             EXIT.
       *--------------------
            PRINT-CUSTOMER.
-               DISPLAY "-----------------------------------------------"
-               DISPLAY "Kunde: " NAVN OF SORT-REC
-               DISPLAY "Adresse: " ADRESSE OF SORT-REC
+               MOVE "-----------------------------------------------"
+                   TO LINE-CONTENT
+               PERFORM WRITE-LINE
+
+               MOVE SPACES TO LINE-CONTENT
+
+               STRING
+                    "Kunde: " DELIMITED BY SIZE
+                    NAVN OF SORT-REC DELIMITED BY SPACE
+                    INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE
+               
+               STRING
+                    "Adresse: " DELIMITED BY SIZE
+                    ADRESSE OF SORT-REC DELIMITED BY SPACE
+                    INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE
 
                PERFORM FIND-BANK
 
-               DISPLAY SPACES
-               DISPLAY SPACES
+               MOVE SPACES TO LINE-CONTENT
+               PERFORM WRITE-LINE
+               PERFORM WRITE-LINE
 
-               DISPLAY "Kontoudskrift for kontonr.: " KONTO-ID 
-                                                       OF SORT-REC
-               DISPLAY SPACES
+               STRING
+                    "Kontoudskrift for kontonr.: " DELIMITED BY SIZE
+                    KONTO-ID OF SORT-REC DELIMITED BY SPACE
+                    INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE         
+                                                       
+               MOVE SPACES TO LINE-CONTENT
+               PERFORM WRITE-LINE
            EXIT.
       *--------------------
            PRINT-CUSTOMER-TRANSACTIONS.
@@ -176,56 +216,150 @@
                    ", " DELIMITED BY SIZE
 
                    "Transaktionstype: " DELIMITED BY SIZE
-                   FUNCTION  TRIM(TRANSAKTIONSTYPE OF SORT-REC)
+                   FUNCTION TRIM(TRANSAKTIONSTYPE OF SORT-REC)
                        DELIMITED BY SPACE
                    ", " DELIMITED BY SIZE
 
                    "Beløb: " DELIMITED BY SIZE
-                   FUNCTION  TRIM(BELØB OF SORT-REC)
+                   FUNCTION TRIM(BELØB OF SORT-REC)
                        DELIMITED BY SPACE
                    " " DELIMITED BY SIZE
 
-                   FUNCTION  TRIM(VALUTA OF SORT-REC)
+                   FUNCTION TRIM(VALUTA OF SORT-REC)
                        DELIMITED BY SPACE
                    ", " DELIMITED BY SIZE
 
                    "Butik: " DELIMITED BY SIZE
-                   FUNCTION  TRIM(BUTIK OF SORT-REC)
+                   FUNCTION TRIM(BUTIK OF SORT-REC)
                        DELIMITED BY SPACE
 
-                   INTO WS-LINE
+                   INTO LINE-CONTENT
                END-STRING
-
-               DISPLAY WS-LINE
+               
+               PERFORM WRITE-LINE
            EXIT.
       *--------------------
            PRINT-CUSTOMER-SALDO.
-               DISPLAY SPACES
-               DISPLAY SPACES
-               DISPLAY "Totalt indbetalt (DKK): " WS-GROUP-SUM-IN
-               DISPLAY "Totalt udbetalt (DKK): " WS-GROUP-SUM-OUT
-               DISPLAY "Saldo (DKK): " WS-GROUP-SUM
+               PERFORM PREP-SALDO-DISPLAY.
 
-               DISPLAY SPACES
-               DISPLAY SPACES
-               DISPLAY "Med venlig hilse"
-               DISPLAY "Asgers bank"
-               DISPLAY SPACES
-               DISPLAY SPACES
-               DISPLAY SPACES
+               MOVE SPACES TO LINE-CONTENT
+               PERFORM WRITE-LINE
+               PERFORM WRITE-LINE
+               
+               STRING
+                   "Totalt indbetalt (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE
+
+               STRING
+                   "Totalt udbetalt (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE
+               
+               STRING
+                   "Saldo (DKK): " DELIMITED BY SIZE
+                   FUNCTION TRIM(WS-GROUP-SUM-DISPLAY)
+                      DELIMITED BY SPACE
+                   INTO LINE-CONTENT
+               END-STRING
+               PERFORM WRITE-LINE
+
+               MOVE SPACES TO LINE-CONTENT
+               PERFORM WRITE-LINE
+               PERFORM WRITE-LINE
+
+               MOVE "Med venlig hilsen" TO LINE-CONTENT
+               PERFORM WRITE-LINE
+
+               MOVE "Asgers bank" TO LINE-CONTENT
+               PERFORM WRITE-LINE
+
+               MOVE SPACES TO LINE-CONTENT
+               PERFORM WRITE-LINE
+               PERFORM WRITE-LINE
+               PERFORM WRITE-LINE
            EXIT.
       *--------------------
+           PREP-SALDO-DISPLAY.
+               MOVE WS-GROUP-SUM TO WS-GROUP-SUM-DISPLAY.
+               MOVE WS-GROUP-SUM-IN TO WS-GROUP-SUM-IN-DISPLAY.
+               MOVE WS-GROUP-SUM-OUT TO WS-GROUP-SUM-OUT-DISPLAY.
+
+               IF WS-GROUP-SUM < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-DISPLAY)
+                       TO WS-GROUP-SUM-DISPLAY
+               END-IF
+
+               IF WS-GROUP-SUM-IN < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-IN-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-IN-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-IN-DISPLAY)
+                       TO WS-GROUP-SUM-IN-DISPLAY
+               END-IF
+
+               IF WS-GROUP-SUM-OUT < 0
+                   STRING
+                       "-" DELIMITED BY SIZE
+                       FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY(2: LENGTH 
+                                       OF WS-GROUP-SUM-IN-DISPLAY - 1))
+                           DELIMITED BY SPACE
+
+                       INTO WS-GROUP-SUM-OUT-DISPLAY
+                   END-STRING
+               ELSE
+                   MOVE FUNCTION TRIM(WS-GROUP-SUM-OUT-DISPLAY)
+                       TO WS-GROUP-SUM-OUT-DISPLAY
+               END-IF
+            EXIT.
+      *--------------------
            ADD-TO-GROUP-SUM.
-               ADD FUNCTION NUMVAL(BELØB OF SORT-REC) TO WS-GROUP-SUM
+               PERFORM CONVERT-VALUTA.
+
+               ADD WS-CONVERTED-VALUTA-AMOUNT TO WS-GROUP-SUM
 
                IF TRANSAKTIONSTYPE OF SORT-REC = "Indbetaling" OR
                    TRANSAKTIONSTYPE OF SORT-REC = "Overfoersel"
                THEN
-                   ADD FUNCTION NUMVAL(BELØB OF SORT-REC)
+                   ADD WS-CONVERTED-VALUTA-AMOUNT
                        TO WS-GROUP-SUM-IN
                ELSE
-                   ADD FUNCTION NUMVAL(BELØB OF SORT-REC)
+                   ADD WS-CONVERTED-VALUTA-AMOUNT
                        TO WS-GROUP-SUM-OUT
+               END-IF
+           EXIT.
+      *--------------------
+           CONVERT-VALUTA.
+               IF VALUTA OF SORT-REC = "USD"
+                   COMPUTE WS-CONVERTED-VALUTA-AMOUNT = 
+                       FUNCTION NUMVAL(BELØB OF SORT-REC) * 6,8
+               ELSE IF VALUTA OF SORT-REC = "EUR"
+                   COMPUTE WS-CONVERTED-VALUTA-AMOUNT = 
+                       FUNCTION NUMVAL(BELØB OF SORT-REC) * 7,5
+               ELSE
+                   MOVE FUNCTION NUMVAL(BELØB OF SORT-REC) 
+                       TO WS-CONVERTED-VALUTA-AMOUNT
                END-IF
            EXIT.
       *--------------------
@@ -236,17 +370,54 @@
                    IF REG-NR OF WS-BANKER-ENTRY(IDX) =
                        REG-NR OF SORT-REC(1:4)
                    THEN
-                       DISPLAY SPACES
-                       DISPLAY WS-SPACES "Registreringsnummer: " REG-NR
-                               OF WS-BANKER-ENTRY(IDX)
-                       DISPLAY WS-SPACES "Bank: " BANKNAVN
-                               OF WS-BANKER-ENTRY(IDX)
-                       DISPLAY WS-SPACES "Bankadresse: " BANKADRESSE 
-                               OF WS-BANKER-ENTRY(IDX)
-                       DISPLAY WS-SPACES "Telefon: " TELEFON
-                               OF WS-BANKER-ENTRY(IDX)
-                       DISPLAY WS-SPACES "E-maiL: " EMAIL
-                               OF WS-BANKER-ENTRY(IDX)                      
+                       MOVE SPACES TO LINE-CONTENT
+                       PERFORM WRITE-LINE
+                       
+                       STRING
+                           WS-SPACES DELIMITED BY SIZE
+                           "Registreringsnummer: " DELIMITED BY SIZE
+                           REG-NR OF WS-BANKER-ENTRY(IDX)
+                              DELIMITED BY SPACE
+                           INTO LINE-CONTENT
+                       END-STRING
+                       PERFORM WRITE-LINE
+                       
+                       STRING
+                           WS-SPACES DELIMITED BY SIZE
+                           "Bank: " DELIMITED BY SIZE
+                           BANKNAVN OF WS-BANKER-ENTRY(IDX)
+                              DELIMITED BY SPACE
+                           INTO LINE-CONTENT
+                       END-STRING
+                       PERFORM WRITE-LINE
+                       
+                       STRING
+                           WS-SPACES DELIMITED BY SIZE
+                           "Bankadresse: " DELIMITED BY SIZE
+                           BANKADRESSE OF WS-BANKER-ENTRY(IDX)
+                              DELIMITED BY SPACE
+                           INTO LINE-CONTENT
+                       END-STRING
+                       PERFORM WRITE-LINE
+
+                       STRING
+                           WS-SPACES DELIMITED BY SIZE
+                           "Telefon: " DELIMITED BY SIZE
+                           TELEFON OF WS-BANKER-ENTRY(IDX)
+                              DELIMITED BY SPACE
+                           INTO LINE-CONTENT
+                       END-STRING
+                       PERFORM WRITE-LINE
+                       
+                       STRING
+                           WS-SPACES DELIMITED BY SIZE
+                           "E-maiL: " DELIMITED BY SIZE
+                           EMAIL OF WS-BANKER-ENTRY(IDX)
+                              DELIMITED BY SPACE
+                           INTO LINE-CONTENT
+                       END-STRING
+                       PERFORM WRITE-LINE
+
                        EXIT PERFORM
                    END-IF
 
@@ -254,7 +425,12 @@
                END-PERFORM.
 
                IF IDX > WS-BANKER-COUNT
-                   DISPLAY "BANK NOT FOUND"
+                   MOVE "BANK NOT FOUND" TO LINE-CONTENT
+                   PERFORM WRITE-LINE
                END-IF.
             EXIT.
-               
+      *--------------------
+           WRITE-LINE.
+               WRITE OUT-TRANSACTION FROM LINE-CONTENT
+                   AFTER ADVANCING 1 LINE
+           EXIT.
